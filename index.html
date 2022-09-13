@@ -1,0 +1,188 @@
+<html>
+<body>
+<input type="text" id="0" name="0" size="1">
+<input type="text" id="1" name="1" size="1">
+<input type="text" id="2" name="2" size="1">
+&nbsp;
+<input type="text" id="3" name="3" size="1">
+<input type="text" id="4" name="4" size="1">
+<input type="text" id="5" name="5" size="1">
+&nbsp;
+<input type="text" id="6" name="6" size="1">
+<input type="text" id="7" name="7" size="1">
+<input type="text" id="8" name="8" size="1">
+<br/>
+<input type="text" id="9" name="9" size="1">
+<input type="text" id="10" name="10" size="1">
+<input type="text" id="11" name="11" size="1">
+&nbsp;
+<input type="text" id="12" name="12" size="1">
+<input type="text" id="13" name="13" size="1">
+<input type="text" id="14" name="14" size="1">
+&nbsp;
+<input type="text" id="15" name="15" size="1">
+<input type="text" id="16" name="16" size="1">
+<input type="text" id="17" name="17" size="1">
+<br/>
+<input type="text" id="18" name="18" size="1">
+<input type="text" id="19" name="19" size="1">
+<input type="text" id="20" name="20" size="1">
+&nbsp;
+<input type="text" id="21" name="21" size="1">
+<input type="text" id="22" name="22" size="1">
+<input type="text" id="23" name="23" size="1">
+&nbsp;
+<input type="text" id="24" name="24" size="1">
+<input type="text" id="25" name="25" size="1">
+<input type="text" id="26" name="26" size="1">
+<br/>
+<br/>
+<input type="text" id="27" name="27" size="1">
+<input type="text" id="28" name="28" size="1">
+<input type="text" id="29" name="29" size="1">
+&nbsp;
+<input type="text" id="30" name="30" size="1">
+<input type="text" id="31" name="31" size="1">
+<input type="text" id="32" name="32" size="1">
+&nbsp;
+<input type="text" id="33" name="33" size="1">
+<input type="text" id="34" name="34" size="1">
+<input type="text" id="35" name="35" size="1">
+<br/>
+<input type="text" id="36" name="36" size="1">
+<input type="text" id="37" name="37" size="1">
+<input type="text" id="38" name="38" size="1">
+&nbsp;
+<input type="text" id="39" name="39" size="1">
+<input type="text" id="40" name="40" size="1">
+<input type="text" id="41" name="41" size="1">
+&nbsp;
+<input type="text" id="42" name="42" size="1">
+<input type="text" id="43" name="43" size="1">
+<input type="text" id="44" name="44" size="1">
+<br/>
+<input type="text" id="45" name="45" size="1">
+<input type="text" id="46" name="46" size="1">
+<input type="text" id="47" name="47" size="1">
+&nbsp;
+<input type="text" id="48" name="48" size="1">
+<input type="text" id="49" name="49" size="1">
+<input type="text" id="50" name="50" size="1">
+&nbsp;
+<input type="text" id="51" name="51" size="1">
+<input type="text" id="52" name="52" size="1">
+<input type="text" id="53" name="53" size="1">
+<br/>
+<br/>
+<input type="text" id="54" name="54" size="1">
+<input type="text" id="55" name="55" size="1">
+<input type="text" id="56" name="56" size="1">
+&nbsp;
+<input type="text" id="57" name="57" size="1">
+<input type="text" id="58" name="58" size="1">
+<input type="text" id="59" name="59" size="1">
+&nbsp;
+<input type="text" id="60" name="60" size="1">
+<input type="text" id="61" name="61" size="1">
+<input type="text" id="62" name="62" size="1">
+<br/>
+<input type="text" id="63" name="63" size="1">
+<input type="text" id="64" name="64" size="1">
+<input type="text" id="65" name="65" size="1">
+&nbsp;
+<input type="text" id="66" name="66" size="1">
+<input type="text" id="67" name="67" size="1">
+<input type="text" id="68" name="68" size="1">
+&nbsp;
+<input type="text" id="69" name="69" size="1">
+<input type="text" id="70" name="70" size="1">
+<input type="text" id="71" name="71" size="1">
+<br/>
+<input type="text" id="72" name="72" size="1">
+<input type="text" id="73" name="73" size="1">
+<input type="text" id="74" name="74" size="1">
+&nbsp;
+<input type="text" id="75" name="75" size="1">
+<input type="text" id="76" name="76" size="1">
+<input type="text" id="77" name="77" size="1">
+&nbsp;
+<input type="text" id="78" name="78" size="1">
+<input type="text" id="79" name="79" size="1">
+<input type="text" id="80" name="80" size="1">
+<br/>
+<br/>
+
+<button onClick="otherAction();">Solve!</button>
+<button onClick="clearResults();">Reset</button>
+
+<div id="A1">
+</div>
+
+<script>
+
+const userAction = async () => {
+  const response = await fetch('https://localhost:7051/Sudoku/Sudoku');
+  const myJson = await response.json(); //extract JSON from the http response
+  document.getElementById("A2").innerHTML = "<p>Fetched</p>";
+  // do something with myJson
+}
+
+const otherAction = async () => {
+  let headers = new Headers();
+
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+
+  headers.append('Access-Control-Allow-Origin', 'http://localhost:8888');
+  headers.append('Access-Control-Allow-Credentials', 'true');
+  
+  headers.append('GET', 'POST', 'OPTIONS');
+  
+  const response = await fetch('https://localhost:7051/Sudoku/Sudoku', {
+	method: 'POST',
+    body: formRequestBody(),//'{"ca": [{"value": 0,"known": true,"row": 0,"col": 0,"group": 0,"guessindex": 0}]}', // string or object
+    headers: headers,
+  });
+  const myJson = await response.json(); //extract JSON from the http response
+  console.log(myJson);
+  document.getElementById("A1").innerHTML = myJson.message;
+  postResult(myJson.cells);
+}
+
+const formRequestBody = () => {
+	var body = '{"ca": [';
+	for (let i = 0; i < 81; i++) {
+		var v = document.getElementById(i).value;
+		if(v == '') { v = 0;}
+		body += '{"value": ';
+		body += v;
+		body+= '}';
+		if (i!=80) {
+			body+= ',';
+		}
+	}
+	
+	body += ']}';
+	return body;
+}
+
+const postResult = (cells) => {
+	for (let i = 0; i < 81; i++) {
+		document.getElementById(i).setAttribute('value',cells[i].value);
+		if(cells[i].known) {
+			document.getElementById.disabled = true; 
+		}
+	}
+}
+
+const clearResults = () => {	
+	for (let i = 0; i < 81; i++) {
+		document.getElementById.disabled = false; 
+		document.getElementById(i).setAttribute('value', '');
+	}
+	document.getElementById("A1").innerHTML = 'Reset';
+}
+</script>
+
+</body>
+</html>
